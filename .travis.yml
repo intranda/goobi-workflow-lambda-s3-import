@@ -10,5 +10,5 @@ deploy:
   on:
     repo: intranda/goobi-workflow-lambda-s3-import
     branch: master
-  script_cleanup: true
+  skip_cleanup: true
   draft: true

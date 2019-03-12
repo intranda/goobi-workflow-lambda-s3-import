@@ -9,5 +9,6 @@ deploy:
   file: s3_trigger_goobi.zip
   on:
     repo: intranda/goobi-workflow-lambda-s3-import
+    branch: master
   script_cleanup: true
   draft: true

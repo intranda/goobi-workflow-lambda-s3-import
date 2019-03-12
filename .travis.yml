@@ -1,6 +1,13 @@
 language: python
 python: 3.5
-
 install: make venv dependencies
 script: make zip
-
+deploy:
+  provider: releases
+  api_key:
+    secure: G7JXHctOvEGLqc8A5do3Q2+YuQMtGsOgOPN01URaiRy31rAmphhX0hEoEpt2YdM0zXnm8iBwX6E3RlAgHysg8mM+NCWNmNFtuj51mluYSmjsvCek6mT5cVjqKSdPSIPj0rmsteul8zso/U7B8u35Zmu4Z+8Vpai+3D9WfkLHljkGfKH/CuhoCtpCgOxDA41S4FSg9/jqRtRGoOleeMaUnJXGFxiAPCTSv9oXRgErah47yYZhFrw88+O6ydj4w8OoDw3/vPAMsgS65M47UsZJaClUW8V1gKtLm+1LiUiZS4g3jB5Gxf7b9kDJu+SB/XXAqZNv30qN6yX8XoJPO1zJNrrGvtfsvmhBQUO1v5z2b0uJ679YlWTnJIRCgylgWsmyAVaOHr+8K/fvLATwiCj4z2McMKYUFjWc2V/JIa+GVtkf3TTThkAQt+fAQv6t6O6d9BJNMhrcOG/+TZkZWHd93F4n6v66DghfGtWaxQpV8rqWgNlpPHQrlgiQaUSc6RtrRaXhXsNRv67DLhMma2RYUAnWQM8Lre2iaoPA6xowEBEoGCl/R2xgWMhcY4newGR46WEaR+bN6XhfxuKgFjXUg7l+2QBcZS3l0LImSSvN1vDvrV4vmoZKz4gzFA/Po8D3YJ/wStOycWIpBrJEln4MoLP6Jj/IMFW8cDaLhdv46xw=
+  file: s3_trigger_goobi.zip
+  on:
+    repo: intranda/goobi-workflow-lambda-s3-import
+  script_cleanup: true
+  draft: true

@@ -1,3 +1,6 @@
+# Project specific
+*.zip
+
 .vscode
 # ---> VisualStudioCode
 .vscode/*

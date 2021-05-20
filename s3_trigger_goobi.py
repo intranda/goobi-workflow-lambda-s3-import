@@ -36,13 +36,15 @@ def lambda_handler(event, context):
                 'templateid': templateid,
                 'updatetemplateid': update_templateid,
                 'hotfolder': hotfolder}
+        r = None
         r = requests.post(url=api_endpoint, headers=headers, json=data)
         r.raise_for_status()
         logger.info(r.text)
         return r.text
     except Exception as e:
-        logger.error('Received error %s', r.text)
         logger.exception(e)
+        if r != None:
+            logger.error('Received error %s', r.text)
         try:
             s3 = boto3.resource('s3')
             s3.Object(bucket, "failed/" +

@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 FUNCTION=s3_trigger_goobi
-PY_VERSION=python3.5
+PY_VERSION=python3.9
 
 .PHONY: zip
 all: zip

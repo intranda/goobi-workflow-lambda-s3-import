@@ -21,7 +21,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2.3.1
         with:
-          python-verison: 3.9
+          python-version: 3.9
       - name: Setup virtualenv
         run: make venv
       - name: Run a multi-line script
